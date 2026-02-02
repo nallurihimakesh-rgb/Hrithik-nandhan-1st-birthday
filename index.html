@@ -11,6 +11,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* ===== Google Map Fix ===== */
+
+.map-container {
+  position: relative;
+  z-index: 10;
+}
+
+.map-box {
+  width: 100%;
+  height: 260px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
         /* ==================== GLOBAL STYLES ==================== */
         * {
             margin: 0;
@@ -935,19 +955,20 @@
             
             <!-- Google Maps -->
             <div class="map-container">
-                <h2 class="map-title">📍 Location</h2>
-                <iframe
-  class="map-frame"
-  src="https://www.google.com/maps?q=A+Plus+Convention+Center+Vijayawada&output=embed"
-  width="100%"
-  height="260"
-  style="border:0;border-radius:15px;"
-  loading="lazy"
-  allowfullscreen>
-</iframe>
-                <button class="map-button" onclick="openGoogleMaps()">📍 Open in Google Maps</button>
+  <h2 class="map-title">📍 Location</h2>
+
+  <div class="map-box">
+    <iframe
+      src="https://www.google.com/maps?q=A+Plus+Convention+Center+Vijayawada&output=embed"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <button class="map-button" onclick="openGoogleMaps()">
+    📍 Open in Google Maps
+  </button>
             </div>
-    </div>
     
     <!-- Background Party Music (Auto-play) -->
     <!-- 
